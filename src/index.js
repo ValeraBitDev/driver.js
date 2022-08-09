@@ -14,6 +14,8 @@ import {
   SHOULD_ANIMATE_OVERLAY,
   SHOULD_OUTSIDE_CLICK_CLOSE,
   SHOULD_OUTSIDE_CLICK_NEXT,
+  UPDATE_ON_START,
+  IGNORE_WARNINGS,
   ALLOW_KEYBOARD_CONTROL,
 } from './common/constants';
 import Stage from './core/stage';
@@ -36,6 +38,8 @@ export default class Driver {
       keyboardControl: ALLOW_KEYBOARD_CONTROL,     // Whether to allow controlling through keyboard or not
       overlayClickNext: SHOULD_OUTSIDE_CLICK_NEXT, // Whether to move next on click outside the element
       stageBackground: '#ffffff',       // Background color for the stage
+      updateOnStart: UPDATE_ON_START,
+      ignoreWarnings: IGNORE_WARNINGS,
       onHighlightStarted: () => null,   // When element is about to be highlighted
       onHighlighted: () => null,        // When element has been highlighted
       onDeselected: () => null,         // When the element has been deselected
@@ -51,6 +55,7 @@ export default class Driver {
     this.steps = [];                    // steps to be presented if any
     this.currentStep = 0;               // index for the currently highlighted step
     this.currentMovePrevented = false;  // If the current move was prevented
+    this.originalSteps = [];
 
     this.overlay = new Overlay(this.options, window, document);
 
@@ -346,6 +351,7 @@ export default class Driver {
    */
   defineSteps(steps) {
     this.steps = [];
+    this.originalSteps = [...steps];
 
     for (let counter = 0; counter < steps.length; counter++) {
       const element = this.prepareElementFromStep(steps[counter], steps, counter);
@@ -387,7 +393,9 @@ export default class Driver {
     // If the given element is a query selector or a DOM element?
     const domElement = isDomElement(querySelector) ? querySelector : this.document.querySelector(querySelector);
     if (!domElement) {
-      console.warn(`Element to highlight ${querySelector} not found`);
+      if (!this.options.ignoreWarnings) {
+        console.warn(`Element to highlight ${querySelector} not found`);
+      }
       return null;
     }
 
@@ -437,6 +445,9 @@ export default class Driver {
 
     this.isActivated = true;
     this.currentStep = index;
+    if (this.options.updateOnStart) {
+      this.defineSteps(this.originalSteps);
+    }
     this.overlay.highlight(this.steps[index]);
   }
 

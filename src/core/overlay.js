@@ -58,7 +58,9 @@ export default class Overlay {
    */
   highlight(element) {
     if (!element || !element.node) {
-      console.warn('Invalid element to highlight. Must be an instance of `Element`');
+      if (!this.options.ignoreWarnings) {
+        console.warn('Invalid element to highlight. Must be an instance of `Element`');
+      }
       return;
     }
 

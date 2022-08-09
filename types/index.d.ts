@@ -821,6 +821,10 @@ declare module 'driver.js' {
        */
       className?: string;
 
+      updateOnStart?: boolean;
+
+      ignoreWarnings?: boolean;
+
       /**
        * Callback to be called when element is about to be highlighted
        * @param {Driver.Element} element
