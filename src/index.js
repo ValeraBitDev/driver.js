@@ -355,11 +355,7 @@ export default class Driver {
 
     for (let counter = 0; counter < steps.length; counter++) {
       const element = this.prepareElementFromStep(steps[counter], steps, counter);
-      if (!element) {
-        continue;
-      }
-
-      this.steps.push(element);
+      this.steps.push(element || null);
     }
   }
 
@@ -448,7 +444,10 @@ export default class Driver {
     if (this.options.updateOnStart) {
       this.defineSteps(this.originalSteps);
     }
-    this.overlay.highlight(this.steps[index]);
+    const step = this.steps[index];
+    if (step) {
+      this.overlay.highlight(step);
+    }
   }
 
   /**

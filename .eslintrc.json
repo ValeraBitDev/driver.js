@@ -11,11 +11,10 @@
     "no-continue": "off",
     "no-console": "off",
     "no-bitwise": "off",
+    "linebreak-style": "off",
     "class-methods-use-this": "off",
     "prefer-destructuring": "off",
-    "no-param-reassign": [
-      "off"
-    ],
+    "no-param-reassign": ["off"],
     "max-len": "off",
     "no-multi-spaces": "off"
   }
