@@ -17,6 +17,7 @@ import {
   UPDATE_ON_START,
   IGNORE_WARNINGS,
   ALLOW_KEYBOARD_CONTROL,
+  SHOW_STEPS,
 } from './common/constants';
 import Stage from './core/stage';
 import { isDomElement } from './common/utils';
@@ -40,6 +41,7 @@ export default class Driver {
       stageBackground: '#ffffff',       // Background color for the stage
       updateOnStart: UPDATE_ON_START,
       ignoreWarnings: IGNORE_WARNINGS,
+      showSteps: SHOW_STEPS,
       onHighlightStarted: () => null,   // When element is about to be highlighted
       onHighlighted: () => null,        // When element has been highlighted
       onDeselected: () => null,         // When the element has been deselected

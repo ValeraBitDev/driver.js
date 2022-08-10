@@ -7,6 +7,7 @@ export const ALLOW_KEYBOARD_CONTROL = true;
 export const SHOULD_OUTSIDE_CLICK_NEXT = false;
 export const UPDATE_ON_START = false;
 export const IGNORE_WARNINGS = false;
+export const SHOW_STEPS = false;
 
 export const ESC_KEY_CODE = 27;
 export const LEFT_KEY_CODE = 37;
@@ -24,6 +25,7 @@ export const CLASS_STAGE_NO_ANIMATION = 'driver-stage-no-animation';
 export const CLASS_POPOVER_TIP = 'driver-popover-tip';
 export const CLASS_POPOVER_TITLE = 'driver-popover-title';
 export const CLASS_POPOVER_DESCRIPTION = 'driver-popover-description';
+export const CLASS_POPOVER_STEPS = 'driver-popover-steps';
 export const CLASS_POPOVER_FOOTER = 'driver-popover-footer';
 export const CLASS_CLOSE_BTN = 'driver-close-btn';
 export const CLASS_NEXT_STEP_BTN = 'driver-next-btn';
@@ -43,6 +45,7 @@ export const POPOVER_HTML = (className = '') => `
     <div class="${CLASS_POPOVER_DESCRIPTION}">Popover Description</div>
     <div class="driver-clearfix ${CLASS_POPOVER_FOOTER}">
       <button class="${CLASS_CLOSE_BTN}">Close</button>
+      <div class="${CLASS_POPOVER_STEPS}">Steps</div>
       <span class="driver-btn-group ${CLASS_NAVIGATION_BTNS}">
         <button class="${CLASS_PREV_STEP_BTN}">&larr; Previous</button>
         <button class="${CLASS_NEXT_STEP_BTN}">Next &rarr;</button>

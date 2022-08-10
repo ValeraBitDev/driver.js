@@ -162,6 +162,16 @@ div#driver-popover-item {
     font-weight: normal;
     zoom: 1;
   }
+
+  .driver-popover-steps {
+    margin-left: 4px;
+    margin-bottom: 0;
+    font: 14px/normal sans-serif;
+    line-height: 1.5;
+    color: $text-color;
+    font-weight: normal;
+    zoom: 1;
+  }
 }
 
 .driver-clearfix:before {

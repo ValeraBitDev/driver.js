@@ -825,6 +825,8 @@ declare module 'driver.js' {
 
       ignoreWarnings?: boolean;
 
+      showSteps?: boolean;
+
       /**
        * Callback to be called when element is about to be highlighted
        * @param {Driver.Element} element

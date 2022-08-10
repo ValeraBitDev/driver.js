@@ -6,6 +6,7 @@ import {
   CLASS_NEXT_STEP_BTN,
   CLASS_POPOVER_DESCRIPTION,
   CLASS_POPOVER_FOOTER,
+  CLASS_POPOVER_STEPS,
   CLASS_POPOVER_TIP,
   CLASS_POPOVER_TITLE,
   CLASS_PREV_STEP_BTN,
@@ -63,6 +64,7 @@ export default class Popover extends Element {
     this.titleNode = popover.querySelector(`.${CLASS_POPOVER_TITLE}`);
     this.descriptionNode = popover.querySelector(`.${CLASS_POPOVER_DESCRIPTION}`);
     this.footerNode = popover.querySelector(`.${CLASS_POPOVER_FOOTER}`);
+    this.stepsNode = popover.querySelector(`.${CLASS_POPOVER_STEPS}`);
     this.nextBtnNode = popover.querySelector(`.${CLASS_NEXT_STEP_BTN}`);
     this.prevBtnNode = popover.querySelector(`.${CLASS_PREV_STEP_BTN}`);
     this.closeBtnNode = popover.querySelector(`.${CLASS_CLOSE_BTN}`);
@@ -202,6 +204,12 @@ export default class Popover extends Element {
     if (!this.options.showButtons) {
       this.footerNode.style.display = 'none';
       return;
+    }
+
+    if (this.options.showSteps && hasSteps) {
+      this.stepsNode.innerHTML = `${this.options.currentIndex}/${this.options.totalCount} Step`;
+    } else {
+      this.stepsNode.style.display = 'none';
     }
 
     // If this is just a single highlighted element i.e. there
