@@ -43,9 +43,9 @@ export const POPOVER_HTML = (className = '') => `
     <div class="${CLASS_POPOVER_TIP}"></div>
     <div class="${CLASS_POPOVER_TITLE}">Popover Title</div>
     <div class="${CLASS_POPOVER_DESCRIPTION}">Popover Description</div>
+    <div class="${CLASS_POPOVER_STEPS}">Steps</div>
     <div class="driver-clearfix ${CLASS_POPOVER_FOOTER}">
       <button class="${CLASS_CLOSE_BTN}">Close</button>
-      <div class="${CLASS_POPOVER_STEPS}">Steps</div>
       <span class="driver-btn-group ${CLASS_NAVIGATION_BTNS}">
         <button class="${CLASS_PREV_STEP_BTN}">&larr; Previous</button>
         <button class="${CLASS_NEXT_STEP_BTN}">Next &rarr;</button>
