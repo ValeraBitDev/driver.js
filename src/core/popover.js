@@ -200,17 +200,17 @@ export default class Popover extends Element {
 
     const hasSteps = this.options.totalCount && this.options.totalCount !== 1;
 
-    // If there was only one item, hide the buttons
-    if (!this.options.showButtons) {
-      this.footerNode.style.display = 'none';
-      return;
-    }
-
     if (this.options.showSteps && hasSteps) {
       this.stepsNode.innerHTML = `${this.options.currentIndex}/${this.options.totalCount} Step`;
       this.stepsNode.style.display = 'inline-block';
     } else {
       this.stepsNode.style.display = 'none';
+    }
+
+    // If there was only one item, hide the buttons
+    if (!this.options.showButtons) {
+      this.footerNode.style.display = 'none';
+      return;
     }
 
     // If this is just a single highlighted element i.e. there
