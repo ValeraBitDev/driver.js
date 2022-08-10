@@ -201,7 +201,7 @@ export default class Popover extends Element {
     const hasSteps = this.options.totalCount && this.options.totalCount !== 1;
 
     if (this.options.showSteps && hasSteps) {
-      this.stepsNode.innerHTML = `${this.options.currentIndex}/${this.options.totalCount} Step`;
+      this.stepsNode.innerHTML = `${this.options.currentIndex + 1}/${this.options.totalCount} Steps`;
       this.stepsNode.style.display = 'inline-block';
     } else {
       this.stepsNode.style.display = 'none';
