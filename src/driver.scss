@@ -139,12 +139,6 @@ div#driver-popover-item {
       float: right;
     }
 
-    .driver-skip-btn {
-      float: left;
-      margin-left: 4px;
-      margin-top: 8px;
-    }
-
     .driver-btn-group {
       float: right;
     }
@@ -179,6 +173,12 @@ div#driver-popover-item {
     color: $text-color;
     font-weight: normal;
     zoom: 1;
+  }
+
+  .driver-skip-btn {
+    float: left;
+    margin-left: 4px;
+    margin-top: 8px;
   }
 }
 
