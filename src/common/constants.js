@@ -8,6 +8,7 @@ export const SHOULD_OUTSIDE_CLICK_NEXT = false;
 export const UPDATE_ON_START = false;
 export const IGNORE_WARNINGS = false;
 export const SHOW_STEPS = false;
+export const SHOW_SKIP = false;
 
 export const ESC_KEY_CODE = 27;
 export const LEFT_KEY_CODE = 37;
@@ -32,6 +33,7 @@ export const CLASS_NEXT_STEP_BTN = 'driver-next-btn';
 export const CLASS_PREV_STEP_BTN = 'driver-prev-btn';
 export const CLASS_BTN_DISABLED = 'driver-disabled';
 export const CLASS_CLOSE_ONLY_BTN = 'driver-close-only-btn';
+export const CLASS_SKIP_BTN = 'driver-skip-btn';
 export const CLASS_NAVIGATION_BTNS = 'driver-navigation-btns';
 
 // NOTE: It must match the one set in the animations in CSS file
@@ -43,6 +45,7 @@ export const POPOVER_HTML = (className = '') => `
     <div class="${CLASS_POPOVER_TIP}"></div>
     <div class="${CLASS_POPOVER_TITLE}">Popover Title</div>
     <div class="${CLASS_POPOVER_DESCRIPTION}">Popover Description</div>
+    <button class="${CLASS_SKIP_BTN}">Skip</button>
     <div class="${CLASS_POPOVER_STEPS}">Steps</div>
     <div class="driver-clearfix ${CLASS_POPOVER_FOOTER}">
       <button class="${CLASS_CLOSE_BTN}">Close</button>

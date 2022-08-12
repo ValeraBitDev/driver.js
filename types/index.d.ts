@@ -827,6 +827,8 @@ declare module 'driver.js' {
 
       showSteps?: boolean;
 
+      showSkip?: boolean;
+
       /**
        * Callback to be called when element is about to be highlighted
        * @param {Driver.Element} element
@@ -862,6 +864,8 @@ declare module 'driver.js' {
        * Is called when the previous element is about to be highlighted
        */
       onPrevious?: (element: Driver.Element) => void;
+
+      onSkip?: () => void;
     }
 
     interface ElementOptions extends Driver.DriverOptions {

@@ -18,6 +18,8 @@ import {
   IGNORE_WARNINGS,
   ALLOW_KEYBOARD_CONTROL,
   SHOW_STEPS,
+  CLASS_SKIP_BTN,
+  SHOW_SKIP,
 } from './common/constants';
 import Stage from './core/stage';
 import { isDomElement } from './common/utils';
@@ -42,11 +44,13 @@ export default class Driver {
       updateOnStart: UPDATE_ON_START,
       ignoreWarnings: IGNORE_WARNINGS,
       showSteps: SHOW_STEPS,
+      showSkip: SHOW_SKIP,
       onHighlightStarted: () => null,   // When element is about to be highlighted
       onHighlighted: () => null,        // When element has been highlighted
       onDeselected: () => null,         // When the element has been deselected
       onReset: () => null,              // When overlay is about to be cleared
       onNext: () => null,               // When next button is clicked
+      onSkip: () => null,
       onPrevious: () => null,           // When previous button is clicked
       ...options,
     };
@@ -144,6 +148,7 @@ export default class Driver {
     }
 
     const nextClicked = e.target.classList.contains(CLASS_NEXT_STEP_BTN);
+    const skipClicked = e.target.classList.contains(CLASS_SKIP_BTN);
     const prevClicked = e.target.classList.contains(CLASS_PREV_STEP_BTN);
     const closeClicked = e.target.classList.contains(CLASS_CLOSE_BTN);
 
@@ -156,6 +161,9 @@ export default class Driver {
       this.handleNext();
     } else if (prevClicked) {
       this.handlePrevious();
+    } else if (skipClicked) {
+      this.reset(true);
+      this.options.onSkip();
     }
   }
 

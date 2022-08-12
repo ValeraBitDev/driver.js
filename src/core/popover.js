@@ -10,6 +10,7 @@ import {
   CLASS_POPOVER_TIP,
   CLASS_POPOVER_TITLE,
   CLASS_PREV_STEP_BTN,
+  CLASS_SKIP_BTN,
   ID_POPOVER,
   POPOVER_HTML,
 } from '../common/constants';
@@ -65,6 +66,7 @@ export default class Popover extends Element {
     this.descriptionNode = popover.querySelector(`.${CLASS_POPOVER_DESCRIPTION}`);
     this.footerNode = popover.querySelector(`.${CLASS_POPOVER_FOOTER}`);
     this.stepsNode = popover.querySelector(`.${CLASS_POPOVER_STEPS}`);
+    this.skipBtnNode = popover.querySelector(`.${CLASS_SKIP_BTN}`);
     this.nextBtnNode = popover.querySelector(`.${CLASS_NEXT_STEP_BTN}`);
     this.prevBtnNode = popover.querySelector(`.${CLASS_PREV_STEP_BTN}`);
     this.closeBtnNode = popover.querySelector(`.${CLASS_CLOSE_BTN}`);
@@ -206,6 +208,8 @@ export default class Popover extends Element {
     } else {
       this.stepsNode.style.display = 'none';
     }
+
+    this.skipBtnNode.style.display = this.options.showSkip && hasSteps ? 'inline-block' : 'none';
 
     // If there was only one item, hide the buttons
     if (!this.options.showButtons) {
