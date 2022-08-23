@@ -154,6 +154,7 @@ export default class Driver {
 
     if (closeClicked) {
       this.reset();
+      this.options.onSkip();
       return;
     }
 
