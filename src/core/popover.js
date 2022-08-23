@@ -221,14 +221,15 @@ export default class Popover extends Element {
     // are no other steps to go to – just hide the navigation buttons
     if (!hasSteps) {
       this.nextBtnNode.style.display = 'none';
-      this.prevBtnNode.style.display = 'none';
       this.closeBtnNode.classList.add(CLASS_CLOSE_ONLY_BTN);
     } else {
       // @todo modify CSS to use block
       this.nextBtnNode.style.display = 'inline-block';
-      this.prevBtnNode.style.display = 'inline-block';
       this.closeBtnNode.classList.remove(CLASS_CLOSE_ONLY_BTN);
     }
+
+    this.prevBtnNode.style.display = 'none';
+
 
     this.footerNode.style.display = 'block';
     if (this.options.isFirst) {
