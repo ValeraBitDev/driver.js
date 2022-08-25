@@ -1,6 +1,5 @@
 import Element from './element';
 import {
-  CLASS_BTN_DISABLED,
   CLASS_CLOSE_BTN,
   CLASS_CLOSE_ONLY_BTN,
   CLASS_NEXT_STEP_BTN,
@@ -9,7 +8,6 @@ import {
   CLASS_POPOVER_STEPS,
   CLASS_POPOVER_TIP,
   CLASS_POPOVER_TITLE,
-  CLASS_PREV_STEP_BTN,
   CLASS_SKIP_BTN,
   ID_POPOVER,
   POPOVER_HTML,
@@ -68,7 +66,6 @@ export default class Popover extends Element {
     this.stepsNode = popover.querySelector(`.${CLASS_POPOVER_STEPS}`);
     this.skipBtnNode = popover.querySelector(`.${CLASS_SKIP_BTN}`);
     this.nextBtnNode = popover.querySelector(`.${CLASS_NEXT_STEP_BTN}`);
-    this.prevBtnNode = popover.querySelector(`.${CLASS_PREV_STEP_BTN}`);
     this.closeBtnNode = popover.querySelector(`.${CLASS_CLOSE_BTN}`);
   }
 
@@ -128,6 +125,8 @@ export default class Popover extends Element {
   show(position) {
     this.attachNode();
     this.setInitialState();
+
+    this.node.style.fontFamily = this.options.fontFamily || 'initial';
 
     // Set the title and descriptions
     this.titleNode.innerHTML = this.options.title;
@@ -197,7 +196,6 @@ export default class Popover extends Element {
    */
   renderFooter() {
     this.nextBtnNode.innerHTML = this.options.nextBtnText;
-    this.prevBtnNode.innerHTML = this.options.prevBtnText;
     this.closeBtnNode.innerHTML = this.options.closeBtnText;
 
     const hasSteps = this.options.totalCount && this.options.totalCount !== 1;
@@ -228,15 +226,9 @@ export default class Popover extends Element {
       this.closeBtnNode.classList.remove(CLASS_CLOSE_ONLY_BTN);
     }
 
-    this.prevBtnNode.style.display = 'none';
-
-
     this.footerNode.style.display = 'block';
     if (this.options.isFirst) {
-      this.prevBtnNode.classList.add(CLASS_BTN_DISABLED);
       this.nextBtnNode.innerHTML = this.options.startBtnText;
-    } else {
-      this.prevBtnNode.classList.remove(CLASS_BTN_DISABLED);
     }
 
     if (this.options.isLast) {

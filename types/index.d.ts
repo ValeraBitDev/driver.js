@@ -829,6 +829,8 @@ declare module 'driver.js' {
 
       showSkip?: boolean;
 
+      fontFamily?: string;
+
       /**
        * Callback to be called when element is about to be highlighted
        * @param {Driver.Element} element

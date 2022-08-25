@@ -1,4 +1,4 @@
-$text-color: #2d2d2d !default;
+$text-color: #171717 !default;
 $popover-bg: #ffffff !default;
 $stage-bg: #ffffff !default;
 $button-bg: #f1f1f1 !default;
@@ -21,7 +21,7 @@ div#driver-popover-item {
   color: $text-color;
   margin: 0;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   min-width: 250px;
   max-width: 300px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
@@ -107,7 +107,7 @@ div#driver-popover-item {
 
   .driver-popover-footer {
     display: block;
-    margin-top: 10px;
+    margin-top: 30px;
 
     button {
       display: inline-block;
@@ -133,6 +133,22 @@ div#driver-popover-item {
 
     .driver-close-btn {
       float: left;
+      color: #8F92A1;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    
+    .driver-next-btn {
+      border: none;
+      background: #36145E;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: #fff;
     }
 
     .driver-close-only-btn {
@@ -140,39 +156,44 @@ div#driver-popover-item {
     }
 
     .driver-btn-group {
-      float: right;
+      float: left;
     }
   }
 
   .driver-popover-title {
-    font: 19px/normal sans-serif;
     margin: 0 0 5px;
     font-weight: bold;
     display: block;
     position: relative;
-    line-height: 1.5;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
     zoom: 1;
   }
 
   .driver-popover-description {
     margin-bottom: 0;
-    font: 14px/normal sans-serif;
-    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
     color: $text-color;
     font-weight: normal;
     zoom: 1;
   }
 
   .driver-popover-steps {
-    margin-left: 4px;
-    margin-top: 8px;
     margin-bottom: 0;
     float: right;
-    font: 12px/normal sans-serif;
-    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
     color: $text-color;
-    font-weight: normal;
     zoom: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .driver-skip-btn {
