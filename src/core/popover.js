@@ -195,9 +195,6 @@ export default class Popover extends Element {
    * @private
    */
   renderFooter() {
-    this.nextBtnNode.innerHTML = this.options.currentIndex + 1 === this.options.totalCount
-      ? this.options.finalNextText || this.options.nextBtnText
-      : this.options.nextBtnText;
     this.closeBtnNode.innerHTML = this.options.closeBtnText;
     const hasSteps = this.options.totalCount && this.options.totalCount !== 1;
 
@@ -227,7 +224,7 @@ export default class Popover extends Element {
       this.closeBtnNode.classList.remove(CLASS_CLOSE_ONLY_BTN);
     }
 
-    this.footerNode.style.display = 'block';
+    this.footerNode.style.display = 'flex';
     if (this.options.isFirst) {
       this.nextBtnNode.innerHTML = this.options.startBtnText;
     }

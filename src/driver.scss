@@ -110,6 +110,10 @@ div#driver-popover-item {
     align-items: center;
     margin-top: 30px;
 
+    button {
+      cursor: pointer;
+    }
+
     .driver-close-btn {
       border: none;
       background: transparent;
@@ -124,7 +128,7 @@ div#driver-popover-item {
       border: none;
       background: #36145e;
       border-radius: 8px;
-      padding: 8px 26px;
+      padding: 6px 22px;
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
@@ -137,6 +141,7 @@ div#driver-popover-item {
 
     .driver-btn-group {
       float: left;
+      flex: 1;
     }
   }
 
