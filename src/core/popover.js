@@ -195,13 +195,14 @@ export default class Popover extends Element {
    * @private
    */
   renderFooter() {
-    this.nextBtnNode.innerHTML = this.options.nextBtnText;
+    this.nextBtnNode.innerHTML = this.options.currentIndex + 1 === this.options.totalCount
+      ? this.options.finalNextText || this.options.nextBtnText
+      : this.options.nextBtnText;
     this.closeBtnNode.innerHTML = this.options.closeBtnText;
-
     const hasSteps = this.options.totalCount && this.options.totalCount !== 1;
 
     if (this.options.showSteps && hasSteps) {
-      this.stepsNode.innerHTML = `${this.options.currentIndex + 1}/${this.options.totalCount} Steps`;
+      this.stepsNode.innerHTML = `Step ${this.options.currentIndex + 1}/${this.options.totalCount}`;
       this.stepsNode.style.display = 'inline-block';
     } else {
       this.stepsNode.style.display = 'none';
