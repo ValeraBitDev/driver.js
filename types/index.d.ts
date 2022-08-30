@@ -183,6 +183,8 @@ declare module 'driver.js' {
        */
       element: string | HTMLElement | Node;
 
+      host?: ShadowRoot;
+
       /**
        * Color of stage when this step is active
        * @default #ffffff
